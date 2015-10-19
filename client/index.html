@@ -4,7 +4,9 @@
 	<meta charset="UTF-8">
 	<title>Customers list</title>
 	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
 </head>
 <body>
 	<script src="create_users.js"></script>
@@ -14,6 +16,24 @@
 		<input type="text" name="phone">
 		<input type="submit" value="Create user"/>
 	</form>
+
+	<!-----------MODAL FOR EDIT USERS DATA---------->
+	<div id="edit" class="modal">
+		<div class="modal-content">
+			<h4>Edit user</h4>
+			<form class="edit-user">
+				<input type="text" name="name"/>
+				<input type="email" name="email"/>
+				<input type="text" name="phone">
+			</form>
+		</div>
+		<div class="modal-footer">
+			<a href="#" class="modal-action modal-close waves-effect waves-green btn-flat accept-edit-user">Save</a>
+			<a href="#" class="waves-effect waves-green btn-flat modal-close">Cancel</a>
+		</div>
+	</div>
+	<!------------------------------------------------>
+
 	<table id="users">
 		<thead>
 			<tr>
