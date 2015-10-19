@@ -1,12 +1,21 @@
 var usersData;
 $( document ).ready(function() {
     getData();
-    $('.create').submit(function(e) {
-        var data = {
-            name: $(e.target).find("[name=name]").val(),
-            email: $(e.target).find("[name=email]").val(),
-            phone: $(e.target).find("[name=phone]").val()
-        };
+    $('.accept-create-user').click(function(e) {
+        var tempData = [], data = {};
+        var content = $(e.target.parentNode).siblings('.modal-content');
+        var userData = $(content).find('.create');
+        for(var i = 0; i < userData[0].children.length; i++) {
+            tempData.push(userData[0].children[i].name);
+        }
+        tempData.forEach(function(el) {
+            var val = $(userData).find("[name=" + el + "]").val();
+            Object.defineProperty(data, el, {
+                enumerable: true,
+                configurable: true,
+                writable: true,
+                value: val});
+        });
         usersData.users.push(data);
         $.ajax('/save', {method:'POST', json: true, data:JSON.stringify(usersData)});
         return false;
@@ -57,9 +66,9 @@ function getData() {
 
         $('.accept-edit-user').click(function (e) {
             var data = {
-                name: $('.edit-user input')[0].value,
-                email: $('.edit-user input')[1].value,
-                phone: $('.edit-user input')[2].value
+                name: $('.edit-user input[name="name"]').value,
+                email: $('.edit-user input[name="email"]').value,
+                phone: $('.edit-user input[name="phone"]').value
             };
             usersData.users[elementIndex] = data;
             $.ajax('/save', {method:'POST', json: true, data:JSON.stringify(usersData)});

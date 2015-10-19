@@ -10,12 +10,26 @@
 </head>
 <body>
 	<script src="create_users.js"></script>
-	<form class="create">
-		<input type="text" name="name"/>
-		<input type="email" name="email"/>
-		<input type="text" name="phone">
-		<input type="submit" value="Create user"/>
-	</form>
+
+	<div>
+		<a class="waves-effect waves-light btn modal-trigger" href="#create">Create user</a>
+	</div>
+	<!-----------MODAL FOR CREATE USERS---------->
+	<div id="create" class="modal">
+		<div class="modal-content">
+			<h4>Create user</h4>
+			<form class="create">
+				<input type="text" name="name" placeholder="name"/>
+				<input type="email" name="email" placeholder="email"/>
+				<input type="text" name="phone" placeholder="phone">
+			</form>
+		</div>
+		<div class="modal-footer">
+			<a href="#" class="modal-action modal-close waves-effect waves-green btn-flat accept-create-user">Save</a>
+			<a href="#" class="waves-effect waves-green btn-flat modal-close">Cancel</a>
+		</div>
+	</div>
+	<!------------------------------------------------>
 
 	<!-----------MODAL FOR EDIT USERS DATA---------->
 	<div id="edit" class="modal">
