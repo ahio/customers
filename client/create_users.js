@@ -21,6 +21,7 @@ function getData() {
         });
     })
       .done(function() {
+        $('.modal-trigger').leanModal();
         userUpdate();
         userRemove();
         elementIndex = null;

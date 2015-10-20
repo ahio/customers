@@ -1,5 +1,4 @@
 function userUpdate() {
-    $('.modal-trigger').leanModal();
     $('.edit-user-button').click(function (e) {
         var fields = [], userData = [], index, element, user, formFields;
 
