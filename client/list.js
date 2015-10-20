@@ -8,12 +8,9 @@ function usersList() {
         }
         tempData.forEach(function(el) {
             var val = $(userData).find("[name=" + el + "]").val();
-            Object.defineProperty(data, el, {
-                enumerable: true,
-                configurable: true,
-                writable: true,
-                value: val});
+            data[el] = val;
         });
+        return false;
         usersData.users.push(data);
         $.ajax('/save', {method:'POST', json: true, data:JSON.stringify(usersData)});
     });

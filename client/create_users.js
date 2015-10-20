@@ -3,6 +3,7 @@ var elementIndex = 0;
 $( document ).ready(function() {
     getData();
     usersList();
+    userRemove();
 });
 
 function getData() {
@@ -23,7 +24,5 @@ function getData() {
       .done(function() {
         $('.modal-trigger').leanModal();
         userUpdate();
-        userRemove();
-        elementIndex = null;
       });
 }
