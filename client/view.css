@@ -1,0 +1,31 @@
+.edit-user-button,
+.remove-user-button {
+    padding: 14px 10px 0px 11px;
+    line-height: 10px;
+}
+
+.edit-user-button {
+    margin-right: 2%;
+}
+
+i.left {
+    margin-right: 5px;
+}
+
+nav .nav-wrapper i {
+    font-size: 1.5em;
+}
+
+#users {
+    margin-top: 5%;
+}
+
+input[type=text], input[type=email] {
+    width: 49%;
+}
+
+@media only screen and (max-width: 992px) {
+    table.responsive-table td {
+        min-height: 4.5em;
+    }
+}
