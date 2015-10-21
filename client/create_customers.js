@@ -1,5 +1,5 @@
-function usersList() {
-    $('.accept-create-user').click(function(e) {
+function createCustomer() {
+    $('.confirm-create-user').click(function(e) {
         var tempData = [], data = {};
         var content = $(e.target.parentNode).siblings('.modal-content');
         var userData = $(content).find('.create');
@@ -11,6 +11,6 @@ function usersList() {
             data[el] = val;
         });
         usersData.users.push(data);
-        $.ajax('/save', {method:'POST', json: true, data:JSON.stringify(usersData)});
+        $.ajax('/save', {type:'POST', json: true, data:JSON.stringify(usersData)});
     });
 }

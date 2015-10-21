@@ -1,15 +1,11 @@
-function userRemove() {
+function removeCustomer() {
     $('.remove-user-button').click(function (e) {
-        var index = $('.remove-user-button').index(this);
-        elementIndex = index;
+        elementIndex = $('.remove-user-button').index(this);
     });
 
-    $('.accept-remove-user').click(function (e) {
-        var el = $('#users tbody tr')[elementIndex];
+    $('.confirm-remove-user').click(function (e) {
         usersData.users.splice(elementIndex, 1);
-        el.remove();
-        $.ajax('/save', {method:'POST', json: true, data:JSON.stringify(usersData)});
+        $.ajax('/save', {type:'POST', json: true, data:JSON.stringify(usersData)});
         elementIndex = null;
-
     })
 }

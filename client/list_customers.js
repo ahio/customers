@@ -2,8 +2,7 @@ var usersData;
 var elementIndex = 0;
 $( document ).ready(function() {
     getData();
-    usersList();
-    userRemove();
+    createCustomer();
 });
 
 function getData() {
@@ -13,7 +12,7 @@ function getData() {
             $('#users tbody').append("<tr class='user'>" +
                 "<td><a class='waves-effect waves-light btn modal-trigger fa fa-pencil edit-user-button' " +
                 "href='#edit'></a>" +
-                "<a class='waves-effect waves-light btn modal-trigger fa fa-trash remove-user-button' " +
+                "<a class='waves-effect waves-light btn modal-trigger fa fa-trash red darken-4 remove-user-button' " +
                 "href='#remove'></a></td>" +
                 "<td>" + el.name + "</td>" +
                 "<td>" + el.email + "</td>" +
@@ -28,6 +27,7 @@ function getData() {
     })
         .done(function() {
             $('.modal-trigger').leanModal();
-            userUpdate();
+            updateCustomer();
+            removeCustomer();
         });
 }

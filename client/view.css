@@ -29,3 +29,9 @@ input[type=text], input[type=email] {
         min-height: 4.5em;
     }
 }
+
+@media only screen and (max-width: 600px) {
+    nav .nav-wrapper i {
+        padding-top: 16%;
+    }
+}

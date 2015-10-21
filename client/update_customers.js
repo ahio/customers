@@ -1,4 +1,4 @@
-function userUpdate() {
+function updateCustomer() {
     var fields = [];
     $('.edit-user-button').click(function (e) {
         var userData = [], index, element, user, formFields;
@@ -21,13 +21,13 @@ function userUpdate() {
             $('.edit-user').find('[name=' + el + ']').attr('value', userData[index]);
         });
     });
-    $('.accept-edit-user').click(function (e) {
+    $('.confirm-edit-user').click(function (e) {
         var data = {};
         fields.forEach(function(el) {
             data[el] = $('.edit-user input[name=' + el + ']').val()
         });
         usersData.users[elementIndex] = data;
-        $.ajax('/save', {method: 'POST', json: true, data: JSON.stringify(usersData)});
+        $.ajax('/save', {type: 'POST', json: true, data: JSON.stringify(usersData)});
         elementIndex = null;
         fields = null;
     });
